@@ -10,7 +10,7 @@ body {
 
 header {
   background: #333;
-  color: #f4f4f4;
+  color: #fff;
   padding: 1rem; }
   header h1 {
     text-align: center; }
@@ -21,12 +21,33 @@ header {
     font-size: 2rem; }
   .section-a {
     background: steelblue;
-    color: #fff; }
+    color: set-text-colo(steelblue); }
   .section-b {
     background: skyblue;
-    color: #fff; }
+    color: set-text-colo(skyblue); }
 
-a {
-  color: #333; }
-  a:hover {
-    color: coral; }
+.btn-light, .btn-dark {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem; }
+
+.btn-light {
+  background-color: #f4f4f4;
+  color: #000; }
+  .btn-light:hover {
+    --webkit-transform: $property;
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+    background-color: #c1c1c1; }
+
+.btn-dark {
+  background-color: #333;
+  color: #fff; }
+  .btn-dark:hover {
+    --webkit-transform: $property;
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    background-color: #666666; }

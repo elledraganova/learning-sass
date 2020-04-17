@@ -1,4 +1,5 @@
-@import 'variables.scss' ;
+@import 'variables.scss';
+@import 'functions.scss';
 
 *{
   margin: 0;
@@ -14,7 +15,7 @@ body {
 
 header {
   background: $dark-color;
-  color: $light-color;
+  color: set-text-color($dark-color);
   padding: 1rem;
 
   h1 {
@@ -31,11 +32,11 @@ header {
 
   &-a {
     background: $primary-color;
-    color: #fff;
+    color: set-text-colo($primary-color);
   }
   &-b {
     background: $secondary-color;
-    color: #fff;
+    color:set-text-colo($secondary-color);
   }
 }
 
@@ -52,13 +53,21 @@ header {
   &-light {
     @extend %btn-shared;
     background-color: $light-color;
-    color: #333;
+    color: set-text-color($light-color);
+    &:hover {
+      @include transform(rotate(10deg));
+      background-color: darken($color: $light-color, $amount: 20%);
+    }
   }
 
   &-dark {
     @extend %btn-shared;
     background-color: $dark-color;
-    color: #fff;
+    color: set-text-color($dark-color);
+    &:hover {
+      @include transform(rotate(-10deg));
+      background-color: lighten($color: $dark-color, $amount: 20%)
+    }
   }
 }
 
